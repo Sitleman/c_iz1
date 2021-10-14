@@ -36,4 +36,6 @@ void menu(){
             continue;
         }
     }
+
+    storage_destructor(&automobile_storage);
 }

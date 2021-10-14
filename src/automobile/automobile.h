@@ -21,4 +21,4 @@ char add_automobile(storage* automobile_storage, automobile* car);
 void show_automobile(storage* automobile_storage);
 void find_automobile(storage* automobile_storage, automobile* car);
 
-void storage_destructor(storage* storage);
+void storage_destructor(storage** storage);

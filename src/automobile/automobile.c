@@ -12,9 +12,10 @@ storage* storage_constructor(){
     return new_storage;
 }
 
-void storage_destructor(storage* curr_storage){
-    free(curr_storage->data);
-    free(curr_storage);
+void storage_destructor(storage** curr_storage){
+    free((*curr_storage)->data);
+    free(*curr_storage);
+    *curr_storage = NULL;
 }
 
 char add_automobile(storage* automobile_storage, automobile* car){
@@ -26,7 +27,7 @@ char add_automobile(storage* automobile_storage, automobile* car){
     strcpy(new_car->body_shape, car->body_shape);
 
 
-    automobile_storage->data = (automobile*) realloc(automobile_storage->data, sizeof(automobile*) * (automobile_storage->size + 1));
+    automobile_storage->data = realloc(automobile_storage->data, sizeof(automobile*) * (automobile_storage->size + 1));
     automobile_storage->data[automobile_storage->size] = new_car;
     automobile_storage->size++;
 }
