@@ -28,22 +28,22 @@ char input_automobile(automobile* car, char is_required){
         return 0;
     strcpy(car->model, str);
 
-    printf("\nInput speed: ");
+    printf("Input speed (km/h): ");
     if (!input_string(str) && is_required)
         return 0;
     strcpy(car->speed, str);
 
-    printf("\nInput engine power: ");
+    printf("Input engine power (hp): ");
     if (!input_string(str) && is_required)
         return 0;
     strcpy(car->engine_power, str);
 
-    printf("\nInput body shape: ");
+    printf("Input body shape: ");
     if (!input_string(str) && is_required)
         return 0;
     strcpy(car->body_shape, str);
 
-    printf("\nInput fuel spend: ");
+    printf("Input fuel spend (l/100km): ");
     if (!input_string(str) && is_required)
         return 0;
     strcpy(car->fuel_spend, str);
