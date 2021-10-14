@@ -17,21 +17,22 @@ void menu(){
     while (printf("\nInput command (help): "), input_string(cmd)){
         if (!strcmp(cmd, add)){
             automobile car;
-            if (input_automobile(&car)){
+            if (input_automobile(&car, 1)){
                 add_automobile(automobile_storage, &car);
-                printf("ОК");
+                printf("\nОk");
             } else {
-                printf("Automobile wasn't added");
+                printf("\nError");
             }
             continue;
         }
         if (!strcmp(cmd, find)){
-            printf("2");
+            automobile car;
+            input_automobile(&car, 0);
+            find_automobile(automobile_storage, &car);
             continue;
         }
         if (!strcmp(cmd, show)){
             show_automobile(automobile_storage);
-            //printf("5");
             continue;
         }
     }
